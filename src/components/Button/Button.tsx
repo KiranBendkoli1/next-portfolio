@@ -1,9 +1,10 @@
-import React, {  ReactNode } from 'react'
+import React, { ReactNode, MouseEventHandler } from "react";
 
-const Button:React.FC<{children: ReactNode, onClick:any}>= ({children, onClick}) => {
-  return (
-    <button onClick={()=>onClick?.()}>{children}</button>
-  )
-}
+const Button: React.FC<{
+  children: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}> = ({ children, onClick }) => {
+  return <button onClick={onClick}>{children}</button>;
+};
 
-export default Button
+export default Button;
