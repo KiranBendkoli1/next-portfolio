@@ -48,7 +48,7 @@ export default function Home() {
               target="_blank"
               className="text-[#dc8c9a]"
             >
-              "https://github.com/KiranBendkoli1/ "
+              &quot;https://github.com/KiranBendkoli1/&rdquo;
             </a>
             ;
           </code>

@@ -1,6 +1,6 @@
 import React, {  ReactNode } from 'react'
 
-const Button:React.FC<{children: ReactNode, onClick?:()=>{}}>= ({children, onClick}) => {
+const Button:React.FC<{children: ReactNode, onClick:any}>= ({children, onClick}) => {
   return (
     <button onClick={()=>onClick?.()}>{children}</button>
   )

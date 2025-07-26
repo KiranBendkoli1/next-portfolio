@@ -1,5 +1,5 @@
-'use client';
-import { use, useState } from "react";
+"use client";
+import { useState } from "react";
 import NavItem from "./NavItem";
 import { ROUTES_URL } from "@/constants";
 
