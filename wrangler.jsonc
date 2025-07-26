@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-next-app",
+	"name": "next-portfolio",
 	"compatibility_date": "2025-07-26",
 	"compatibility_flags": [
 		"nodejs_compat"
