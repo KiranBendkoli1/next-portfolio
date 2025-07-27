@@ -1,8 +1,7 @@
-// 'use client';
 import Image from "next/image";
-// import { TypeAnimation } from "react-type-animation";
 import Comment from "../components/Comment";
 import profile from "@/assets/profile.webp";
+import Typer from "@/components/Typer";
 
 export default function Home() {
   const description = `Frontend developer at Winjit Technologies with 2 years of experience building responsive web apps using React.js. Now expanding into backend to go full-stack.`;
@@ -15,20 +14,7 @@ export default function Home() {
             Hi, I’m <span className="text-primary">Kiran Bendkoli</span>
           </h1>
           <h2 className="mb-6 font-semibold text-gray-300 sm:text-xl md:text-2xl">
-            {/* <TypeAnimation
-              sequence={[
-                "> Web developer",
-                2000,
-                "> Software engineer",
-                2000,
-                "> React developer",
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="text-xl text-[#7dc3ff] font-mono"
-            /> */}
+            <Typer />
           </h2>
 
           <Comment type="multi">{description}</Comment>
