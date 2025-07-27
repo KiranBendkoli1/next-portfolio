@@ -1,4 +1,6 @@
 'use client';
+
+
 import { useState, useMemo } from "react";
 import projects, { ProjectType } from "./data";
 import ProjectCard from "@/components/ProjectCard";
@@ -11,6 +13,8 @@ const techList: string[] = [
   "PHP",
   "NPM",
 ];
+
+export const runtime = 'edge';
 
 const Projects = () => {
   const [filters, setFilters] = useState<string[]>([]);

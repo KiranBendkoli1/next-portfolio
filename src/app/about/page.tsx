@@ -20,7 +20,7 @@ const initExplorer = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me</title>
-</head>
+  </head>
 <body>
   <section>
     <h1 style="font-size: 1.75rem; font-weight: bold;">About Me</h1>
@@ -64,50 +64,50 @@ const initExplorer = [
         <li>Developed backend APIs with PostgreSQL</li>
         <li>Explored Kafka and event-driven architecture</li>
         <li>Contributed to real-world production features</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="font-size: 1.25rem; font-weight: 600;">Software Developer</h3>
-      <p style="font-size: 0.875rem; color: gray;">Jun 2023 – Apr 2025</p>
-      <ul style="margin-top: 0.5rem; padding-left: 1rem;">
+        </ul>
+        </div>
+        <div>
+        <h3 style="font-size: 1.25rem; font-weight: 600;">Software Developer</h3>
+        <p style="font-size: 0.875rem; color: gray;">Jun 2023 – Apr 2025</p>
+        <ul style="margin-top: 0.5rem; padding-left: 1rem;">
         <li>Developed scalable and optimized frontend applications</li>
         <li>Worked on various third-party integrations</li>
         <li>Contributed to micro-frontend projects</li>
-      </ul>
-    </div>
-  </section>
-</body>
+        </ul>
+        </div>
+        </section>
+        </body>
 </html>`,
       },
       {
         label: "education",
         type: "file",
         code: `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education</title>
-</head>
-<body>
-  <section style="font-size: 1rem; line-height: 1.6;">
-    <h3 style="font-size: 1.25rem; font-weight: bold;">Education</h3>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Education</title>
+        </head>
+        <body>
+        <section style="font-size: 1rem; line-height: 1.6;">
+        <h3 style="font-size: 1.25rem; font-weight: bold;">Education</h3>
     <div style="margin-top: 1rem;">
       <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">MVPS’s KBT College of Engineering</h4>
       <p style="margin: 0;">Nashik, Maharashtra</p>
       <p style="margin: 0;">Bachelor of Engineering in Computer Engineering</p>
       <p style="margin: 0;">Graduated: May 2023</p>
       <p style="margin: 0;">CGPA: <strong>8.84</strong></p>
-    </div>
-    <div style="margin-top: 1rem;">
+      </div>
+      <div style="margin-top: 1rem;">
       <h4 style="font-size: 1.1rem; font-weight: 600; margin: 0;">KTHM College</h4>
       <p style="margin: 0;">Nashik, Maharashtra</p>
       <p style="margin: 0;">Higher Secondary Education (HSC)</p>
       <p style="margin: 0;">Percentage: <strong>71.38%</strong></p>
-    </div>
-  </section>
-</body>
-</html>`,
+      </div>
+      </section>
+      </body>
+      </html>`,
       },
     ],
   },
@@ -119,10 +119,10 @@ const initExplorer = [
         label: "kiranbendkoli24@gmail.com",
         type: "file",
         code: `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Email</title>
 </head>
 <body>
@@ -134,20 +134,22 @@ const initExplorer = [
         label: "+91 8530628606",
         type: "file",
         code: `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phone</title>
-</head>
-<body>
+  </head>
+  <body>
   <p>Phone: <a href="tel:+918530628606">+91 8530628606</a></p>
-</body>
-</html>`,
-      },
-    ],
+  </body>
+  </html>`,
+},
+],
   },
 ];
+
+export const runtime = 'edge';
 
 const About: React.FC = () => {
   const [explorer, setExplorer] = useState(initExplorer);
@@ -156,7 +158,7 @@ const About: React.FC = () => {
     child: initExplorer[0].children[0].label,
     code: initExplorer[0].children[0].code,
   });
-
+  
   const toggleFolder = (label: string) => {
     setExplorer((prev) =>
       prev.map((node) =>

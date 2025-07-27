@@ -9,7 +9,7 @@ const Comment: FC<{ children: ReactNode; type: "single" | "multi" }> = ({
     const lines = (children as string).split("\n");
 
     return (
-      <div className="text-sm text-gray-400 font-mono leading-relaxed mb-6">
+      <div className="text-xs sm:text-sm text-gray-400 font-mono leading-relaxed mb-6">
         <div>{"/**"}</div>
         {lines.map((line, idx) => (
           <div key={idx} className="break-words">
@@ -21,7 +21,11 @@ const Comment: FC<{ children: ReactNode; type: "single" | "multi" }> = ({
     );
   }
 
-  return <div className="text-gray-400 text-sm font-mono">// {children}</div>;
+  return (
+    <div className="text-gray-400 text-xs sm:text-sm font-mono">
+      // {children}
+    </div>
+  );
 };
 
 export default Comment;

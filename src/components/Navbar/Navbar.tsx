@@ -1,38 +1,36 @@
-"use client";
-import { useState } from "react";
+// components/Navbar.tsx (Server)
+import { headers } from "next/headers";
 import NavItem from "./NavItem";
+import MobileMenu from "./MobileMenu";
 import { ROUTES_URL } from "@/constants";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = async () => {
+  const headerList = await headers(); // await the promise
+  const pathname = headerList.get("x-next-pathname") || "";
 
   return (
     <nav className="w-full border-b border-gray-600 shadow">
       <div className="flex items-center justify-between p-2 md:justify-start">
         <h1 className="pl-2 pr-12">kiran-bendkoli</h1>
-        <button
-          className="px-2 md:hidden"
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          ☰
-        </button>
+
+        {/* Mobile menu toggle (Client-side) */}
+        <MobileMenu currentPath={pathname} />
 
         {/* Desktop nav */}
         <div className="hidden gap-4 px-4 md:flex">
-          <NavItem to={ROUTES_URL.HOME} label="_hello" />
-          <NavItem to={ROUTES_URL.ABOUT} label="_about-me" />
-          <NavItem to={ROUTES_URL.PROJECTS} label="_projects" />
+          <NavItem to={ROUTES_URL.HOME} label="_hello" activePath={pathname} />
+          <NavItem
+            to={ROUTES_URL.ABOUT}
+            label="_about-me"
+            activePath={pathname}
+          />
+          <NavItem
+            to={ROUTES_URL.PROJECTS}
+            label="_projects"
+            activePath={pathname}
+          />
         </div>
       </div>
-
-      {/* Mobile nav */}
-      {isOpen && (
-        <div className="flex flex-col gap-2 px-6 pb-3 md:hidden">
-          <NavItem to={ROUTES_URL.HOME} label="_hello" />
-          <NavItem to={ROUTES_URL.ABOUT} label="_about-me" />
-          <NavItem to={ROUTES_URL.PROJECTS} label="_projects" />
-        </div>
-      )}
     </nav>
   );
 };
