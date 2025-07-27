@@ -1,19 +1,19 @@
-// components/Navbar.tsx (Server)
-import { headers } from "next/headers";
+"use client";
+
+import { usePathname } from "next/navigation";
 import NavItem from "./NavItem";
 import MobileMenu from "./MobileMenu";
 import { ROUTES_URL } from "@/constants";
 
-const Navbar = async () => {
-  const headerList = await headers(); // await the promise
-  const pathname = headerList.get("x-next-pathname") || "";
+const Navbar = () => {
+  const pathname = usePathname();
 
   return (
     <nav className="w-full border-b border-gray-600 shadow">
       <div className="flex items-center justify-between p-2 md:justify-start">
         <h1 className="pl-2 pr-12">kiran-bendkoli</h1>
 
-        {/* Mobile menu toggle (Client-side) */}
+        {/* Mobile menu toggle */}
         <MobileMenu currentPath={pathname} />
 
         {/* Desktop nav */}

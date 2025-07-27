@@ -5,7 +5,6 @@ const Comment: FC<{ children: ReactNode; type: "single" | "multi" }> = ({
   children,
 }) => {
   if (type === "multi") {
-    // Convert the multiline string into an array of lines
     const lines = (children as string).split("\n");
 
     return (
