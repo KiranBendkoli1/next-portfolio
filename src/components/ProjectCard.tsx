@@ -6,6 +6,7 @@ import { FaFlutter } from "react-icons/fa6";
 import { GoLinkExternal } from "react-icons/go";
 import Image from "next/image";
 import { IoLogoAndroid } from "react-icons/io";
+import CustomCard from "./Cards/CustomCard";
 
 type iconsMappingKeys = "reactjs" | "npm" | "flutter" | "python" | "php";
 const iconsMapping = {
@@ -46,7 +47,7 @@ const ProjectCard: FC<{ project: ProjectType }> = ({ project }) => {
       <span className="text-gray-400 truncate">
         // _{project.title.toLowerCase().replace(/\s+/g, "-")}
       </span>
-      <div className="border border-[#3c3c3c] bg-opacity-30 backdrop-blur-md  rounded-xl overflow-hidden shadow-md hover:shadow-lg transition relative">
+      <CustomCard>
         <Image
           src={project.img}
           alt={project.title}
@@ -79,7 +80,7 @@ const ProjectCard: FC<{ project: ProjectType }> = ({ project }) => {
             )}
           </div>
         </div>
-      </div>
+      </CustomCard>
     </div>
   );
 };
