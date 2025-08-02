@@ -1,4 +1,4 @@
-import bb1 from "@/assets/images/project/bb2-min.png"
+import bb1 from "@/assets/images/project/bb2-min.png";
 import em1 from "@/assets/images/project/em2.jpg";
 import gf0 from "@/assets/images/project/gg1.png";
 import lqs1 from "@/assets/images/project/lqs2.jpg";
@@ -7,6 +7,7 @@ import mrs0 from "@/assets/images/project/mrs0-min.png";
 import ksetup from "@/assets/images/project/ksetup.png";
 import foodplaces from "@/assets/images/project/foodplaces.png";
 import crypto from "@/assets/images/project/crypto.png";
+import ngo from "@/assets/images/project/ngo.jpg";
 import { StaticImageData } from "next/image";
 export interface ProjectType {
   index: number;
@@ -30,6 +31,15 @@ const projects: ProjectType[] = [
   },
   {
     index: 1,
+    title: "NGO Nexus",
+    domain: "Flutter",
+    img: ngo,
+    link: "https://github.com/KiranBendkoli1/ngo_app/releases/tag/v0.0.2",
+    desc: "The NGO Nexus app is designed to connect NGOs with volunteers and donors, facilitating collaboration and support for various social causes.",
+    source: "https://github.com/KiranBendkoli1/ngo_app",
+  },
+  {
+    index: 2,
     title: "K-setup",
     domain: "npm",
     img: ksetup,
@@ -38,7 +48,7 @@ const projects: ProjectType[] = [
     link: "https://www.npmjs.com/package/k-setup",
   },
   {
-    index: 2,
+    index: 3,
     title: "Lets Quick Share",
     domain: "Flutter",
     img: lqs1,
@@ -47,7 +57,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/lets-quick-share",
   },
   {
-    index: 3,
+    index: 4,
     title: "Crypto App",
     domain: "ReactJs",
     img: crypto,
@@ -56,7 +66,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/crypto-app-react",
   },
   {
-    index: 4,
+    index: 5,
     title: "Blood Bank Management System",
     domain: "PHP",
     img: bb1,
@@ -64,7 +74,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/blood-bank-management-system",
   },
   {
-    index: 5,
+    index: 6,
     title: "Chrome Tab Tracker",
     domain: "ReactJs",
     img: cc0,
@@ -73,7 +83,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/Chrome-Tab-Tracker",
   },
   {
-    index: 6,
+    index: 7,
     title: "Expense Managaer App",
     domain: "Android",
     img: em1,
@@ -82,7 +92,7 @@ const projects: ProjectType[] = [
     link: "https://github.com/KiranBendkoli1/Expense-Manager/releases/download/v2.0.0/ExpenseManagerV2.0.0.apk",
   },
   {
-    index: 7,
+    index: 8,
     title: "Github Information Finder",
     domain: "ReactJs",
     img: gf0,
@@ -91,7 +101,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/github-information-finder",
   },
   {
-    index: 8,
+    index: 9,
     title: "Movie Recommendation System",
     domain: "Python",
     img: mrs0,
