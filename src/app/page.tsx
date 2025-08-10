@@ -1,4 +1,5 @@
-import HomePage from "@/pages/home/HomePage";
+import AboutPage from "@/pages/about";
+import HomePage from "@/pages/home";
 import dynamic from "next/dynamic";
 
 export const runtime = "edge";
@@ -15,8 +16,8 @@ export default function Home() {
       <section id="home" className="h-screen flex items-center justify-center">
         <HomePage />
       </section>
-      <section id="about" className="h-screen flex items-center justify-center">
-        <h1 className="text-4xl">About</h1>
+      <section id="about" className="h-screen px-[200px]">
+        <AboutPage />
       </section>
       <section
         id="projects"
