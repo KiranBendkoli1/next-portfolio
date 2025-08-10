@@ -115,3 +115,7 @@
   position: absolute;
   width: 16px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

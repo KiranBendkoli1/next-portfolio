@@ -4,6 +4,7 @@ import "./globals.css";
 import GlassWrapper from "@/components/Wrapper";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StarsCanvas from "@/components/StarsCanvas";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio | Kiran Bendkoli",
-  description: "Software Engineer at Winjit Technologies with 2 years of experience building responsive web apps using React.js. Now expanding into backend to go full-stack.",
+  description:
+    "Software Engineer at Winjit Technologies with 2 years of experience building responsive web apps using React.js. Now expanding into backend to go full-stack.",
 };
 
 export default function RootLayout({
@@ -28,13 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-bgPrimary antialiased`}
       >
-        <GlassWrapper>
-          <Navbar />
-          {children}
-          <Footer />
-        </GlassWrapper>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
