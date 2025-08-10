@@ -11,7 +11,7 @@ const icons = [
     key: "instagram",
     icon: FaInstagram,
     label: "Instagram",
-    detail: "@kiran_bendkoli_",
+    detail: "kiran_bendkoli_",
     link: "https://instagram.com/kiran_bendkoli_",
     color: "#E1306C",
   },
@@ -19,7 +19,7 @@ const icons = [
     key: "github",
     icon: FaGithub,
     label: "GitHub",
-    detail: "github.com/KiranBendkoli1",
+    detail: "KiranBendkoli1",
     link: "https://github.com/KiranBendkoli1",
     color: "#181717",
   },
@@ -27,7 +27,7 @@ const icons = [
     key: "linkedin",
     icon: FaLinkedinIn,
     label: "LinkedIn",
-    detail: "linkedin.com/in/kiran-bendkoli-2a2b741b9",
+    detail: "kiran-bendkoli-2a2b741b9",
     link: "https://www.linkedin.com/in/kiran-bendkoli-2a2b741b9/",
     color: "#0077B5",
   },
@@ -64,8 +64,8 @@ const CircleNavCard = () => {
   };
 
   return (
-    <div className="w-full h-[400px] flex flex-col items-center justify-center relative">
-      <h2 className="text-xl pb-3">Contact Me </h2>
+    <div className="w-full h-[260px] flex flex-col items-center justify-center relative">
+      <h2 className="text-2xl font-bold mb-6">Contact me</h2>
       <div className="flex gap-4 pb-5">
         {icons.map((item, index) => {
           const isActive = selected === item.key;

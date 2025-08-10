@@ -2,8 +2,9 @@
 
 import React, { MouseEvent as ReactMouseEvent, ReactNode } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
-const CustomCard = ({ children }: { children: ReactNode }) => {
+const CustomCard = ({ children,className }: { children: ReactNode,className?:string }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -21,7 +22,7 @@ const CustomCard = ({ children }: { children: ReactNode }) => {
 
   return (
     <div
-      className="group relative max-w-md rounded-xl border bg-opacity-30 backdrop-blur-md border-white/10 bg-gray-900 p-4 py-8 shadow-2xl"
+      className={twMerge("group relative max-w-md rounded-xl border bg-opacity-30 backdrop-blur-md border-white/10 bg-gray-900 p-4 py-8 shadow-2xl", className)}
       onMouseMove={handleMouseMove}
     >
       <motion.div

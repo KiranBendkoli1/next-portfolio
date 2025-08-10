@@ -4,21 +4,22 @@ import React from "react";
 import profile from "@/assets/profile.webp";
 
 import CircleNavCard from "@/components/Cards/CircleNavCard";
+import ExperienceCard from "@/components/Cards/ExperienceCard";
 
 const AboutPage = () => {
   return (
     <div className="container grid grid-cols-3 gap-2">
       <CustomCard>
-        <div className="w-full h-[400px]">
+        <div className="w-full h-[260px]">
           <div className="flex w-full justify-center">
             <Image
               src={profile}
               alt={"Kiran Bendkoli"}
-              className="size-[200px] rounded-full"
+              className="size-[150px] rounded-full"
             />
           </div>
-          <h2 className="mt-8 text-xl">Hi, I'm Kiran Bendkoli</h2>
-          <p className="mt-6">
+          <h2 className="mt-6 text-xl">Hi, I'm Kiran Bendkoli</h2>
+          <p className="mt-4">
             I'm a Software Engineer with 2 years of experience of building
             scalable frontend and micro frontend systems. Actively expanding
             into backend development.
@@ -28,9 +29,16 @@ const AboutPage = () => {
       <CustomCard>
         <CircleNavCard />
       </CustomCard>
-      <div className="h-[600px] w-full row-span-2 bg-emerald-300">Hello</div>
-      <div className="h-96 w-full  bg-amber-200">Hello</div>
-      <div className="h-96 w-full bg-cyan-500">Hello</div>
+      <div className="h-full w-full row-span-2">
+        <CustomCard>
+          <ExperienceCard />
+        </CustomCard>
+      </div>
+      <div className="w-full col-span-2">
+        <CustomCard className="max-w-full">
+          <></>
+        </CustomCard>
+      </div>
     </div>
   );
 };

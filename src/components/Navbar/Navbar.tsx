@@ -8,11 +8,18 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   const navItems = [
-    { label: "_home", href: "#home" },
-    { label: "_about", href: "#about" },
-    { label: "_projects", href: "#projects" },
-    { label: "_contact", href: "#contact" },
+    { label: "_home", id: "home" },
+    { label: "_about", id: "about" },
+    { label: "_projects", id: "projects" },
+    { label: "_contact", id: "contact" },
   ];
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Scroll background effect
   useEffect(() => {
@@ -23,17 +30,21 @@ export default function Navbar() {
 
   // Track active section
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.href));
+    const sections = navItems.map((item) => document.getElementById(item.id));
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            window.history.replaceState(null, "", `#${entry.target.id}`);
           }
         });
       },
-      { threshold: 0.6 }
+      {
+        threshold: 0.3,
+        rootMargin: "-80px 0px -80px 0px", 
+      }
     );
 
     sections.forEach((sec) => sec && observer.observe(sec));
@@ -47,22 +58,24 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-light tracking-widest  text-primary">Kiran Bendkoli</h1>
+        <h1 className="text-xl font-light tracking-widest  text-primary">
+          Kiran Bendkoli
+        </h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-sm tracking-widest text-white">
           {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(item.id)}
                 className={`transition-colors ${
-                  activeSection === item.href.slice(1)
+                  activeSection === item.id
                     ? "text-primary border-b-2 border-primary"
                     : "hover:text-gray-300"
                 }`}
               >
                 {item.label}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
@@ -83,18 +96,20 @@ export default function Navbar() {
         <div className="md:hidden bg-black/90 backdrop-blur-md">
           <ul className="flex flex-col items-center py-4 space-y-4">
             {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
+              <li key={item.id}>
+                <button
+                  onClick={() => {
+                    scrollToSection(item.id);
+                    setIsOpen(false);
+                  }}
                   className={`text-lg tracking-widest ${
-                    activeSection === item.href.slice(1)
+                    activeSection === item.id
                       ? "text-primary border-b-2 border-primary"
                       : "text-white"
                   }`}
                 >
                   {item.label}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
