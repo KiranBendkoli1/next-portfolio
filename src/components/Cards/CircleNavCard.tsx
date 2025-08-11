@@ -64,8 +64,8 @@ const CircleNavCard = () => {
   };
 
   return (
-    <div className="w-full h-[260px] flex flex-col items-center justify-center relative">
-      <h2 className="text-2xl font-bold mb-6">Contact me</h2>
+    <div className="h-[260px] flex flex-col items-center justify-center relative">
+      <h2 className="text-2xl font-medium mb-6">Contact me</h2>
       <div className="flex gap-4 pb-5">
         {icons.map((item, index) => {
           const isActive = selected === item.key;

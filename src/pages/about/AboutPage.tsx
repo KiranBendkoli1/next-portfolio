@@ -10,9 +10,9 @@ import ExperienceCard from "@/components/Cards/ExperienceCard";
 import SkillsCard from "@/components/SkillsCard";
 const AboutPage = () => {
   return (
-    <div className="pt-0 sm:pt-16 grid grid-cols-3 gap-2">
+    <div className="pt-0 sm:pt-16 grid grid-cols-1 md:grid-cols-3 gap-2">
       <CustomCard>
-        <div className="w-full h-[290px]">
+        <div className="h-[290px]">
           <div className="flex w-full mt-0 pt-0 justify-center">
             <Image
               src={profile}
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <ExperienceCard />
         </CustomCard>
       </div>
-      <div className="w-full col-span-2">
+      <div className="w-full col-span-1 md:col-span-2">
         <CustomCard className="max-w-full">
           <SkillsCard />
         </CustomCard>

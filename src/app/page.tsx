@@ -17,7 +17,7 @@ export default function Home() {
         <section id="home" className="min-h-screen flex items-center justify-center snap-start">
           <HomePage />
         </section>
-        <section id="about" className="min-h-screen sm:px-[200px] px-0 snap-start">
+        <section id="about" className="min-h-screen lg:px-[200px] px-0 snap-start">
           <AboutPage />
         </section>
         <section
