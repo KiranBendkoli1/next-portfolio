@@ -1,3 +1,4 @@
+"use client"; // temp
 import CustomCard from "@/components/Cards/CustomCard";
 import Image from "next/image";
 import React from "react";
@@ -6,12 +7,13 @@ import profile from "@/assets/profile.webp";
 import CircleNavCard from "@/components/Cards/CircleNavCard";
 import ExperienceCard from "@/components/Cards/ExperienceCard";
 
+import SkillsCard from "@/components/SkillsCard";
 const AboutPage = () => {
   return (
-    <div className="container grid grid-cols-3 gap-2">
+    <div className="pt-0 sm:pt-16 grid grid-cols-3 gap-2">
       <CustomCard>
-        <div className="w-full h-[260px]">
-          <div className="flex w-full justify-center">
+        <div className="w-full h-[290px]">
+          <div className="flex w-full mt-0 pt-0 justify-center">
             <Image
               src={profile}
               alt={"Kiran Bendkoli"}
@@ -29,14 +31,14 @@ const AboutPage = () => {
       <CustomCard>
         <CircleNavCard />
       </CustomCard>
-      <div className="h-full w-full row-span-2">
+      <div className="row-span-2">
         <CustomCard>
           <ExperienceCard />
         </CustomCard>
       </div>
       <div className="w-full col-span-2">
         <CustomCard className="max-w-full">
-          <></>
+          <SkillsCard />
         </CustomCard>
       </div>
     </div>
