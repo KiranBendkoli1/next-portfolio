@@ -28,8 +28,6 @@ const SkillsCard = () => {
         modules={[Autoplay]}
         slidesPerView={8}
         loop
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
         autoplay={{
           delay: 0, // Time between slides (ms)
           disableOnInteraction: false, // Keep autoplay even after user swipes

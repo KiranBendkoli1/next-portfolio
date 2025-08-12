@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 
 export const runtime = "edge";
 
-
 const Scene = dynamic(() => import("@/components/Scene"));
 
 export default function Home() {
@@ -14,17 +13,24 @@ export default function Home() {
         <Scene />
       </div>
       <div className="relative z-10">
-        <section id="home" className="min-h-screen flex items-center justify-center snap-start">
+        <section
+          id="home"
+          className="min-h-screen flex items-center justify-center snap-start"
+        >
           <HomePage />
         </section>
-        <section id="about" className="min-h-screen lg:px-[200px] px-0 snap-start">
+        <section
+          id="about"
+          className="min-h-screen lg:px-[200px] px-0 snap-start"
+        >
           <AboutPage />
         </section>
         <section
           id="projects"
-          className="min-h-screen flex items-center justify-center snap-start"
+          className="min-h-screen"
         >
-          <h1 className="text-4xl">Projects</h1>
+          {/* <Projects3D /> */}
+          <></>
         </section>
         <section
           id="contact"
