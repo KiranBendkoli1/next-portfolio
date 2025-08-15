@@ -1,5 +1,6 @@
 import AboutPage from "@/pages/about";
 import HomePage from "@/pages/home";
+import Projects3D from "@/pages/projects/Projects3D";
 import dynamic from "next/dynamic";
 
 export const runtime = "edge";
@@ -9,36 +10,30 @@ const Scene = dynamic(() => import("@/components/Scene"));
 export default function Home() {
   return (
     <main className="text-white min-h-screen w-full relative">
-      <div className="fixed inset-0 w-full">
-        <Scene />
-      </div>
-      <div className="relative z-10">
-        <section
-          id="home"
-          className="min-h-screen flex items-center justify-center snap-start"
-        >
-          <HomePage />
-        </section>
-        <section
-          id="about"
-          className="min-h-screen lg:px-[200px] px-0 snap-start"
-        >
-          <AboutPage />
-        </section>
-        <section
-          id="projects"
-          className="min-h-screen"
-        >
-          {/* <Projects3D /> */}
-          <></>
-        </section>
-        <section
-          id="contact"
-          className="min-h-screen flex items-center justify-center snap-start"
-        >
-          <h1 className="text-4xl">Contact</h1>
-        </section>
-      </div>
+      <section
+        id="home"
+         className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+      >
+        <HomePage />
+      </section>
+      <section
+        id="about"
+        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+      >
+        <AboutPage />
+      </section>
+      <section
+        id="projects"
+        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+      >
+        <Projects3D />
+      </section>
+      <section
+        id="contact"
+        className="flex items-center justify-center snap-start"
+      >
+        <h1 className="text-4xl">Contact</h1>
+      </section>
     </main>
   );
 }

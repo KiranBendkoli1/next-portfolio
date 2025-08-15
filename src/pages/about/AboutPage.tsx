@@ -10,7 +10,7 @@ import ExperienceCard from "@/components/Cards/ExperienceCard";
 import SkillsCard from "@/components/SkillsCard";
 const AboutPage = () => {
   return (
-    <div className="pt-0 sm:pt-16 grid grid-cols-1 md:grid-cols-3 gap-2">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-2 max-w-6xl mx-auto">
       <CustomCard>
         <div className="h-[290px]">
           <div className="flex w-full mt-0 pt-0 justify-center">
@@ -37,7 +37,7 @@ const AboutPage = () => {
         </CustomCard>
       </div>
       <div className="w-full col-span-1 md:col-span-2">
-        <CustomCard className="max-w-full">
+        <CustomCard>
           <SkillsCard />
         </CustomCard>
       </div>

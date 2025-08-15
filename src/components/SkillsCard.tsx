@@ -47,19 +47,9 @@ const SkillsCard = () => {
             repeat: Infinity,
           }}
         >
-          {/* First row */}
           {skills.map((Icon, i) => (
             <div
               key={`row1-${i}`}
-              className="flex justify-center items-center w-16 h-16"
-            >
-              <Icon />
-            </div>
-          ))}
-          {/* Duplicate row for seamless loop */}
-          {skills.map((Icon, i) => (
-            <div
-              key={`row2-${i}`}
               className="flex justify-center items-center w-16 h-16"
             >
               <Icon />
