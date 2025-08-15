@@ -1,7 +1,5 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
+import { motion } from "framer-motion";
 import {
   Typescript,
   Tailwindcss,
@@ -18,62 +16,57 @@ import {
   PhpDark,
 } from "./icons";
 
+const skills = [
+  Typescript,
+  Tailwindcss,
+  ReactDark,
+  Nodejs,
+  ExpressjsDark,
+  PostgresqlDark,
+  Flutter,
+  Git,
+  GithubLight,
+  Mongodb,
+  PythonDark,
+  JavaDark,
+  PhpDark,
+];
+
 const SkillsCard = () => {
   return (
     <>
       <h2 className="text-2xl font-medium mb-6">My Skills</h2>
-      <Swiper
-        className="overl mb-2.5"
-        spaceBetween={50}
-        modules={[Autoplay]}
-        slidesPerView={8}
-        loop
-        autoplay={{
-          delay: 0, // Time between slides (ms)
-          disableOnInteraction: false, // Keep autoplay even after user swipes
-        }}
-        speed={1000} // Slide animation speed
-      >
-        <SwiperSlide>
-          <Typescript />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Tailwindcss />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ReactDark />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Nodejs />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ExpressjsDark />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PostgresqlDark />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Flutter />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Git />
-        </SwiperSlide>
-        <SwiperSlide>
-          <GithubLight />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Mongodb />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PythonDark />
-        </SwiperSlide>
-        <SwiperSlide>
-          <JavaDark />
-        </SwiperSlide>
-        <SwiperSlide>
-          <PhpDark />
-        </SwiperSlide>
-      </Swiper>
+
+      <div className="overflow-hidden w-full">
+        <motion.div
+          className="flex gap-12"
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            ease: "linear",
+            duration: 10, // slower = smoother
+            repeat: Infinity,
+          }}
+        >
+          {/* First row */}
+          {skills.map((Icon, i) => (
+            <div
+              key={`row1-${i}`}
+              className="flex justify-center items-center w-16 h-16"
+            >
+              <Icon />
+            </div>
+          ))}
+          {/* Duplicate row for seamless loop */}
+          {skills.map((Icon, i) => (
+            <div
+              key={`row2-${i}`}
+              className="flex justify-center items-center w-16 h-16"
+            >
+              <Icon />
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </>
   );
 };

@@ -4,7 +4,13 @@ import React, { MouseEvent as ReactMouseEvent, ReactNode } from "react";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
-const CustomCard = ({ children,className }: { children: ReactNode,className?:string }) => {
+const CustomCard = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -18,11 +24,14 @@ const CustomCard = ({ children,className }: { children: ReactNode,className?:str
     mouseY.set(clientY - top);
   }
 
-  const background = useMotionTemplate`radial-gradient(650px circle at ${mouseX}px ${mouseY}px, rgba(14, 165, 233, 0.15), transparent 90%)`;
+  const background = useMotionTemplate`radial-gradient(300px circle at ${mouseX}px ${mouseY}px, rgba(14, 165, 233, 0.15), transparent 90%)`;
 
   return (
     <div
-      className={twMerge("group relative max-w-md rounded-xl border bg-opacity-30 backdrop-blur-md border-white/10 bg-gray-900 p-4 py-8 shadow-2xl", className)}
+      className={twMerge(
+        "group relative max-w-md rounded-xl border bg-opacity-30 backdrop-blur-md border-white/10 bg-gray-900 p-4 py-8 shadow-2xl",
+        className
+      )}
       onMouseMove={handleMouseMove}
     >
       <motion.div
