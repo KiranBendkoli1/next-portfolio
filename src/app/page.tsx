@@ -1,4 +1,5 @@
 import AboutPage from "@/pages/about";
+import ContactPage from "@/pages/contact/ContactPage";
 import HomePage from "@/pages/home";
 import Projects3D from "@/pages/projects/Projects3D";
 import dynamic from "next/dynamic";
@@ -30,9 +31,9 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="flex items-center justify-center snap-start"
+         className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
       >
-        <h1 className="text-4xl">Contact</h1>
+        <ContactPage/>
       </section>
     </main>
   );
