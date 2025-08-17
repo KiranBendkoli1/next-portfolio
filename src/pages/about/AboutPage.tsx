@@ -20,11 +20,8 @@ const AboutPage = () => {
               className="size-[150px] rounded-full"
             />
           </div>
-          <h2 className="mt-6 text-xl">Hi, I'm Kiran Bendkoli</h2>
           <p className="mt-4">
-            I'm a Software Engineer with 2 years of experience of building
-            scalable frontend and micro frontend systems. Actively expanding
-            into backend development.
+            I'm a Software Engineer with 2 years of industrial experience of building frontends with React js. Recently I have started exploring backend technologies with Node js and Express. I also like to develop android applications with Flutter.
           </p>
         </div>
       </CustomCard>

@@ -53,25 +53,25 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md bg-white/10 shadow-lg" : "bg-transparent"
+      className={`fixed w-full top-0 z-50 transition-all duration-300  ${
+        isScrolled ? "backdrop-blur-md bg-white/10 shadow-lg " : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <h1 className="text-xl font-light tracking-widest  text-primary">
+        <h1 className="text-xl font-light tracking-widest text-accent-cyan gradient-text">
           Kiran Bendkoli
         </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-sm tracking-widest text-white">
+        <ul className="hidden md:flex space-x-8 text-sm tracking-widest text-dark-textMuted">
           {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(item.id)}
                 className={`transition-colors ${
                   activeSection === item.id
-                    ? "text-primary border-b-2 border-primary"
-                    : "hover:text-gray-300"
+                    ? "text-accent-cyan drop-shadow-[0_0_6px_rgba(168,85,247,0.7)]"
+                    : "hover:text-white transition"
                 }`}
               >
                 {item.label}
