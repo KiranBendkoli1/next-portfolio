@@ -14,16 +14,6 @@ export interface ProjectType {
 
 const projects: ProjectType[] = [
   {
-    index: 0,
-    title: "Food Places App",
-    domain: "ReactJs",
-    img: "/images/foodplaces.png",
-    link: "https://food-places-e37db.web.app/",
-    desc: "A react app where you can find nearby foodshops listed by foodshops owners, you can also add your likes and reviews",
-    source: "https://github.com/KiranBendkoli1/foodshops",
-    position: [0, 3, -6], // Project 2 - top center
-  },
-  {
     index: 1,
     title: "NGO Nexus",
     domain: "Flutter",
@@ -31,8 +21,21 @@ const projects: ProjectType[] = [
     link: "https://github.com/KiranBendkoli1/ngo_app/releases/tag/v0.0.2",
     desc: "The NGO Nexus app is designed to connect NGOs with volunteers and donors, facilitating collaboration and support for various social causes.",
     source: "https://github.com/KiranBendkoli1/ngo_app",
-    position:[-5, 3, -5] , // Project 3 - top right
+    vid: "/videos/ngo.mp4",
+    position: [-5, 3, -5], // Project 3 - top right
   },
+  {
+    index: 0,
+    title: "Food Places App",
+    domain: "ReactJs",
+    img: "/images/foodplaces.png",
+    link: "https://food-places-e37db.web.app/",
+    desc: "A react app where you can find nearby foodshops listed by foodshops owners, you can also add your likes and reviews",
+    source: "https://github.com/KiranBendkoli1/foodshops",
+    vid: "/videos/foodplaces.mp4",
+    position: [0, 3, -6], // Project 2 - top center
+  },
+
   {
     index: 2,
     title: "K-setup",
@@ -45,6 +48,17 @@ const projects: ProjectType[] = [
     position: [-5, 0, -6], // Project 4 - middle left
   },
   {
+    index: 4,
+    title: "Crypto App",
+    domain: "ReactJs",
+    img: "/images/crypto.png",
+    vid: "/videos/crypto.mp4",
+    link: "https://crypto-app-react-pearl.vercel.app/",
+    desc: "Want to track ups and downs of crypto market. visit crypto app you'll get stats of most of the crypto currencies flowing through with visuals",
+    source: "https://github.com/KiranBendkoli1/crypto-app-react",
+    position: [5, 0, -6], // Project 6 - middle right
+  },
+  {
     index: 3,
     title: "Lets Quick Share",
     domain: "Flutter",
@@ -54,16 +68,7 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/lets-quick-share",
     position: [0, 0, -7], // Project 5 - middle center (depth)
   },
-  {
-    index: 4,
-    title: "Crypto App",
-    domain: "ReactJs",
-    img: "/images/crypto.png",
-    link: "https://crypto-app-react-pearl.vercel.app/",
-    desc: "Want to track ups and downs of crypto market. visit crypto app you'll get stats of most of the crypto currencies flowing through with visuals",
-    source: "https://github.com/KiranBendkoli1/crypto-app-react",
-    position: [5, 0, -6], // Project 6 - middle right
-  },
+
   {
     index: 5,
     title: "Blood Bank Management System",
@@ -73,7 +78,6 @@ const projects: ProjectType[] = [
     source: "https://github.com/KiranBendkoli1/blood-bank-management-system",
     position: [5, 3, -5], // Project 1 - top left
   },
-  
 ];
 
 export default projects;

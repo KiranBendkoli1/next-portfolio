@@ -5,15 +5,17 @@ import Projects3D from "@/pages/projects/Projects3D";
 import dynamic from "next/dynamic";
 
 export const runtime = "edge";
-
-const Scene = dynamic(() => import("@/components/Scene"));
+const AuroraCanvas = dynamic(() => import("@/components/Aurora/AuroraScene"));
 
 export default function Home() {
   return (
     <main className="text-white min-h-screen w-full relative">
+       <div className="fixed -z-10 w-full h-screen">
+        <AuroraCanvas />
+      </div>
       <section
         id="home"
-         className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
       >
         <HomePage />
       </section>
@@ -31,9 +33,9 @@ export default function Home() {
       </section>
       <section
         id="contact"
-         className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
       >
-        <ContactPage/>
+        <ContactPage />
       </section>
     </main>
   );

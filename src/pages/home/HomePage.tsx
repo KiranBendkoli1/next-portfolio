@@ -5,7 +5,10 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <section id="home" className="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto">
+    <section
+      id="home"
+      className="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto relative"
+    >
       <div className="py-12 col-span-1 sm:col-span-2 flex flex-col justify-center items-start text-start text-white px-4">
         <GradientText>Kiran Bendkoli</GradientText>
         <p className="text-lg  mt-4 max-w-2xl">
