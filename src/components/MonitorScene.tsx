@@ -1,15 +1,36 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useMemo } from "react";
 import { Center, OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three";
+import { TextureLoader, VideoTexture, LinearFilter, LinearMipmapLinearFilter, SRGBColorSpace } from "three";
 
 useGLTF.preload("/ultrawide_monitor.glb");
 
 const Monitor = ({ textureUrl }: { textureUrl: string }) => {
   const { scene, materials } = useGLTF("/ultrawide_monitor.glb");
-  const texture = useLoader(TextureLoader, textureUrl);
+
+  // Decide whether it's image or video
+  const texture = useMemo(() => {
+    if (textureUrl.endsWith(".mp4")) {
+      const video = document.createElement("video");
+      video.src = textureUrl;
+      video.crossOrigin = "anonymous";
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.play();
+
+      const videoTexture = new VideoTexture(video);
+      videoTexture.colorSpace = SRGBColorSpace;
+      videoTexture.minFilter = LinearFilter;
+      videoTexture.magFilter = LinearFilter;
+      videoTexture.generateMipmaps = false;
+      return videoTexture;
+    } else {
+      return new TextureLoader().load(textureUrl);
+    }
+  }, [textureUrl]);
 
   // clone material so each card has its own screen
   const screen = materials["Screen"].clone() as any;

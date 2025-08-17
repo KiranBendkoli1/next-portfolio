@@ -88,7 +88,9 @@ const Projects3D = () => {
 
               {/* Right Column - Image */}
               <div className="w-full sm:w-[500px] h-[300px] backdrop-blur-md bg-white/10 shadow-lg rounded-lg">
-                <MonitorScene textureUrl={project.img} />
+                <MonitorScene
+                  textureUrl={project.vid ? project.vid : project.img}
+                />
               </div>
             </motion.div>
           ))}

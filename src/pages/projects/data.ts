@@ -5,6 +5,7 @@ export interface ProjectType {
   title: string;
   domain: string;
   img: string;
+  vid?: string;
   link?: string;
   desc: string;
   source: string;
@@ -37,6 +38,7 @@ const projects: ProjectType[] = [
     title: "K-setup",
     domain: "npm",
     img: "/images/ksetup.png",
+    vid: "/videos/ksetup.mp4",
     desc: "A lightweight CLI tool to quickly scaffold React.js or React Native projects with custom configurations and templates.",
     source: "https://github.com/KiranBendkoli1/k-setup",
     link: "https://www.npmjs.com/package/k-setup",
