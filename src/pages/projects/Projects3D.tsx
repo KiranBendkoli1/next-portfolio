@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import projects from "./data";
-import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
-const MonitorScene = dynamic(() => import("@/components/MonitorScene"), { ssr: false });
+const MonitorScene = dynamic(() => import("@/components/MonitorScene"), {
+  ssr: false,
+});
 
 const Projects3D = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
@@ -38,7 +39,7 @@ const Projects3D = () => {
               viewport={{ once: false, amount: 0.3 }}
               variants={cardVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg border border-gray-700 ${
+              className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-lg ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
@@ -86,16 +87,8 @@ const Projects3D = () => {
               </div>
 
               {/* Right Column - Image */}
-              <div className="flex-shrink-0">
-                <div className="relative w-80 h-48 rounded-lg overflow-hidden">
-                  <Image
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-full object-cover rounded-lg"
-                    width={320}
-                    height={192}
-                  />
-                </div>
+              <div className="w-full sm:w-[500px] h-[300px] backdrop-blur-md bg-white/10 shadow-lg rounded-lg">
+                <MonitorScene textureUrl={project.img} />
               </div>
             </motion.div>
           ))}
@@ -112,7 +105,6 @@ const Projects3D = () => {
           </div>
         )}
       </div>
-      <MonitorScene />
     </div>
   );
 };

@@ -1,15 +1,10 @@
 import bb1 from "@/assets/images/project/bb2-min.png";
-import lqs1 from "@/assets/images/project/lqs2.jpg";
-import ksetup from "@/assets/images/project/ksetup.png";
-import foodplaces from "@/assets/images/project/foodplaces.png";
-import crypto from "@/assets/images/project/crypto.png";
-import ngo from "@/assets/images/project/ngo.jpg";
-import { StaticImageData } from "next/image";
+
 export interface ProjectType {
   index: number;
   title: string;
   domain: string;
-  img: StaticImageData;
+  img: string;
   link?: string;
   desc: string;
   source: string;
@@ -21,7 +16,7 @@ const projects: ProjectType[] = [
     index: 0,
     title: "Food Places App",
     domain: "ReactJs",
-    img: foodplaces,
+    img: "/images/foodplaces.png",
     link: "https://food-places-e37db.web.app/",
     desc: "A react app where you can find nearby foodshops listed by foodshops owners, you can also add your likes and reviews",
     source: "https://github.com/KiranBendkoli1/foodshops",
@@ -31,7 +26,7 @@ const projects: ProjectType[] = [
     index: 1,
     title: "NGO Nexus",
     domain: "Flutter",
-    img: ngo,
+    img: "/images/ngo.jpg",
     link: "https://github.com/KiranBendkoli1/ngo_app/releases/tag/v0.0.2",
     desc: "The NGO Nexus app is designed to connect NGOs with volunteers and donors, facilitating collaboration and support for various social causes.",
     source: "https://github.com/KiranBendkoli1/ngo_app",
@@ -41,7 +36,7 @@ const projects: ProjectType[] = [
     index: 2,
     title: "K-setup",
     domain: "npm",
-    img: ksetup,
+    img: "/images/ksetup.png",
     desc: "A lightweight CLI tool to quickly scaffold React.js or React Native projects with custom configurations and templates.",
     source: "https://github.com/KiranBendkoli1/k-setup",
     link: "https://www.npmjs.com/package/k-setup",
@@ -51,7 +46,7 @@ const projects: ProjectType[] = [
     index: 3,
     title: "Lets Quick Share",
     domain: "Flutter",
-    img: lqs1,
+    img: "/images/lqs2.jpg",
     link: "https://lets-quick-share.web.app/#/",
     desc: "This app helps users to share important texts and links between devices. it's present in web app as well as android app",
     source: "https://github.com/KiranBendkoli1/lets-quick-share",
@@ -61,7 +56,7 @@ const projects: ProjectType[] = [
     index: 4,
     title: "Crypto App",
     domain: "ReactJs",
-    img: crypto,
+    img: "/images/crypto.png",
     link: "https://crypto-app-react-pearl.vercel.app/",
     desc: "Want to track ups and downs of crypto market. visit crypto app you'll get stats of most of the crypto currencies flowing through with visuals",
     source: "https://github.com/KiranBendkoli1/crypto-app-react",
@@ -71,7 +66,7 @@ const projects: ProjectType[] = [
     index: 5,
     title: "Blood Bank Management System",
     domain: "PHP",
-    img: bb1,
+    img: "/images/bb2-min.png",
     desc: "This is web based blood bank management system which can be use as a solution over traditional blood bank management system",
     source: "https://github.com/KiranBendkoli1/blood-bank-management-system",
     position: [5, 3, -5], // Project 1 - top left
