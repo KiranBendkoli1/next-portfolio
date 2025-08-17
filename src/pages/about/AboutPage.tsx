@@ -21,7 +21,7 @@ const AboutPage = () => {
             />
           </div>
           <p className="mt-4">
-            I'm a Software Engineer with 2 years of industrial experience of building frontends with React js. Recently I have started exploring backend technologies with Node js and Express. I also like to develop android applications with Flutter.
+          I’m a Software Engineer with 2 years of industry experience in building front-end applications using React.js. Recently, I’ve been exploring backend development with Node.js and Express, expanding my full-stack skills. I also enjoy developing Android apps with Flutter.
           </p>
         </div>
       </CustomCard>

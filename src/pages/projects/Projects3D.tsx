@@ -45,7 +45,7 @@ const Projects3D = () => {
             >
               {/* Left Column - Content */}
               <div className="flex-1 space-y-4">
-                <div className="text-4xl font-bold text-gray-600">
+                <div className="text-4xl font-bold text-accent-cyan">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
