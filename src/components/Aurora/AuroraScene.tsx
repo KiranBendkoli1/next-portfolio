@@ -1,9 +1,16 @@
 "use client";
 
-import { useRef, useMemo, Suspense } from "react";
+import { useRef, useMemo, Suspense, FC, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { ShaderMaterial, type Points } from "three";
 import * as THREE from "three";
+import { usePathname, useSearchParams } from "next/navigation";
+
+interface Props {
+  color1: string;
+  color2: string;
+  color3: string;
+}
 
 // Aurora Shader
 const auroraVertexShader = `
@@ -20,6 +27,9 @@ const auroraVertexShader = `
 const auroraFragmentShader = `
   uniform float uTime;
   uniform float uIntensity;
+  uniform vec3 uColor1;
+  uniform vec3 uColor2;
+  uniform vec3 uColor3;
   varying vec2 vUv;
   varying vec3 vPosition;
   
@@ -67,23 +77,18 @@ const auroraFragmentShader = `
     flow += fbm(vec2(uv.x * 6.0, uv.y * 4.0 - uTime * 0.15)) * 0.5;
     
     // Create vertical streaks
-    float streaks = smoothstep(0.3, 0.7, flow) * curtain;
+    float streaks = smoothstep(0.5, 1.0, flow) * curtain;
     
     // Fade from bottom to top
     float verticalGradient = smoothstep(0.0, 0.6, uv.y) * smoothstep(1.0, 0.7, uv.y);
     
-    // Aurora colors - primarily green with blue variations
-    vec3 green = vec3(0.2, 1.0, 0.4);
-    vec3 blueGreen = vec3(0.1, 0.8, 0.6);
-    vec3 darkGreen = vec3(0.1, 0.6, 0.3);
-    
-    // Mix colors based on position and noise
-    vec3 color = mix(darkGreen, green, streaks);
-    color = mix(color, blueGreen, flow * 0.3);
+    // Mixing colors
+    vec3 color = mix(uColor3, uColor1, streaks);
+    color = mix(color, uColor2, flow * 0.3);
     
     // Apply intensity and gradient
     float alpha = streaks * verticalGradient * uIntensity;
-    alpha *= smoothstep(0.0, 0.1, uv.y); // Fade in from bottom
+    alpha *= smoothstep(0.0, 0.05, uv.y); // Fade in from bottom
     
     gl_FragColor = vec4(color, alpha);
   }
@@ -142,8 +147,7 @@ function Stars() {
   );
 }
 
-function Aurora() {
-  const meshRef = useRef<THREE.Mesh>(null);
+const Aurora: FC<Props> = ({ color1, color2, color3 }) => {
   const materialRef = useRef<ShaderMaterial>(null);
 
   useFrame((state) => {
@@ -152,13 +156,25 @@ function Aurora() {
     }
   });
 
+  // update colors live
+  useEffect(() => {
+    if (materialRef.current) {
+      materialRef.current.uniforms.uColor1.value.set(color1);
+      materialRef.current.uniforms.uColor2.value.set(color2);
+      materialRef.current.uniforms.uColor3.value.set(color3);
+    }
+  }, [color1, color2, color3]);
+
   const shaderMaterial = useMemo(() => {
     return new ShaderMaterial({
       vertexShader: auroraVertexShader,
       fragmentShader: auroraFragmentShader,
       uniforms: {
         uTime: { value: 0 },
-        uIntensity: { value: 0.8 },
+        uIntensity: { value: 1.0 },
+        uColor1: { value: new THREE.Color(color1) },
+        uColor2: { value: new THREE.Color(color2) },
+        uColor3: { value: new THREE.Color(color3) },
       },
       transparent: true,
       blending: THREE.AdditiveBlending,
@@ -166,14 +182,14 @@ function Aurora() {
   }, []);
 
   return (
-    <mesh ref={meshRef} position={[0, 0, -3]}>
+    <mesh position={[0, 0, -3]}>
       <planeGeometry args={[26, 8]} />
       <shaderMaterial ref={materialRef} attach="material" {...shaderMaterial} />
     </mesh>
   );
-}
+};
 
-function AuroraScene() {
+const AuroraScene: FC<Props> = (props) => {
   return (
     <>
       {/* Dark sky background */}
@@ -181,19 +197,77 @@ function AuroraScene() {
 
       <Stars />
 
-      <Aurora />
+      <Aurora {...props} />
     </>
   );
-}
+};
 
 const AuroraCanvas = () => {
+  const [colors, setColors] = useState<{
+    color1: string;
+    color2: string;
+    color3: string;
+  }>({
+    color1: "#00FFE5",
+    color2: "#00F0FF",
+    color3: "#009E8F",
+  });
+  const [hash, setHash] = useState("");
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    setHash(window.location.hash);
+
+    const onHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, [pathname, searchParams]);
+
+  useEffect(() => {
+    if (hash) {
+      if (hash === "#home") {
+        setColors({
+          color1: "#00FFE5", // teal
+          color2: "#00F0FF", // cyan
+          color3: "#009E8F", // deep teal
+        });
+      } else if (hash === "#about") {
+         setColors({
+          color1: "#00FFE5", // teal
+          color2: "#00F0FF", // cyan
+          color3: "#009E8F", // deep teal
+        });
+      } else if (hash === "#projects") {
+        setColors({
+          color1: "#FFD700", // gold
+          color2: "#FF8C00", // orange
+          color3: "#FF4500", // deep orange-red
+        });
+      } else if (hash === "#contact") {
+        setColors({
+          color1: "#FF6B6B", // warm coral
+          color2: "#FF8E53", // soft orange
+          color3: "#FFD93D", // golden yellow
+        });
+      }
+    }
+  }, [hash]);
+
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 75 }}
       className="absolute inset-0"
     >
       <Suspense fallback={null}>
-        <AuroraScene />
+        <AuroraScene
+          color1={colors.color1}
+          color2={colors.color2}
+          color3={colors.color3}
+        />
       </Suspense>
     </Canvas>
   );

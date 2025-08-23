@@ -3,11 +3,18 @@ import ContactPage from "@/pages/contact/ContactPage";
 import HomePage from "@/pages/home";
 import Projects3D from "@/pages/projects/Projects3D";
 import dynamic from "next/dynamic";
+import { headers } from "next/headers";
 
 export const runtime = "edge";
 const AuroraCanvas = dynamic(() => import("@/components/Aurora/AuroraScene"));
 
-export default function Home() {
+export default async function Home() {
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") || "http";
+
+  const fullUrl = `${protocol}://${host}`;
+  console.log({ fullUrl, headersList });
   return (
     <main className="text-white min-h-screen w-full relative">
       <div className="fixed -z-10 w-full h-screen">
@@ -15,7 +22,7 @@ export default function Home() {
       </div>
       <section
         id="home"
-        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+        className="max-w-[1500px] h-screen mx-auto px-0 snap-start pt-0 sm:pt-16"
       >
         <HomePage />
       </section>
@@ -33,7 +40,7 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
+        className="px-0 snap-start pt-0 sm:pt-16"
       >
         <ContactPage />
       </section>
