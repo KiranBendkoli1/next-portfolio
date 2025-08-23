@@ -26,7 +26,7 @@ const Projects3D = () => {
     <div className="py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-4">My Projects</h1>
+          <h1 className="text-5xl font-semibold text-white mb-4">My Projects</h1>
         </div>
 
         <div className="space-y-6">

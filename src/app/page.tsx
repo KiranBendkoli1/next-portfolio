@@ -8,13 +8,7 @@ import { headers } from "next/headers";
 export const runtime = "edge";
 const AuroraCanvas = dynamic(() => import("@/components/Aurora/AuroraScene"));
 
-export default async function Home() {
-  const headersList = await headers();
-  const host = headersList.get("host");
-  const protocol = headersList.get("x-forwarded-proto") || "http";
-
-  const fullUrl = `${protocol}://${host}`;
-  console.log({ fullUrl, headersList });
+export default function Home() {
   return (
     <main className="text-white min-h-screen w-full relative">
       <div className="fixed -z-10 w-full h-screen">
@@ -22,7 +16,7 @@ export default async function Home() {
       </div>
       <section
         id="home"
-        className="max-w-[1500px] h-screen mx-auto px-0 snap-start pt-0 sm:pt-16"
+        className="max-w-[1500px] mx-auto px-0 snap-start pt-0 sm:pt-16"
       >
         <HomePage />
       </section>
