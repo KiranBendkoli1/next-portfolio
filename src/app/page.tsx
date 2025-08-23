@@ -10,7 +10,7 @@ const AuroraCanvas = dynamic(() => import("@/components/Aurora/AuroraScene"));
 export default function Home() {
   return (
     <main className="text-white min-h-screen w-full relative">
-       <div className="fixed -z-10 w-full h-screen">
+      <div className="fixed -z-10 w-full h-screen">
         <AuroraCanvas />
       </div>
       <section

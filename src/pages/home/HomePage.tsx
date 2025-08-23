@@ -1,6 +1,4 @@
-import GradientText from "@/components/GradientText";
-import Typer from "@/components/Typer";
-import Link from "next/link";
+
 import React from "react";
 
 const HomePage = () => {
@@ -19,6 +17,12 @@ const HomePage = () => {
           into backend development to go full-stack.
         </p>
         {/* TODO: Resume Download  */}
+        <div className="py-12">
+
+        <button className="gradient-btn">
+          Download Resume
+          </button>
+        </div>
       </div>
     </section>
   );

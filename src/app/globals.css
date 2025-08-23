@@ -48,7 +48,7 @@ p {
 }
 
 .gradient-btn:hover {
-  background-image: linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-purple));
+  background-image:  linear-gradient(90deg, var(--color-accent-cyan), var(--color-accent-purple));
 }
 
 .aurora {

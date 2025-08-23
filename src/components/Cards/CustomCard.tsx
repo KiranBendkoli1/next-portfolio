@@ -29,7 +29,7 @@ const CustomCard = ({
   return (
     <div
       className={twMerge(
-        "group relative rounded-xl border bg-opacity-30 backdrop-blur-md border-white/10 bg-gray-900 p-4 py-8 shadow-2xl",
+        "group relative rounded-xl border backdrop-blur-md border-white/10 bg-gray-900/60 p-4 py-8 shadow-2xl",
         className
       )}
       onMouseMove={handleMouseMove}
