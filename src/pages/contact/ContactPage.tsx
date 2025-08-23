@@ -37,11 +37,28 @@ const ContactPage = () => {
     setSubmitStatus("idle");
 
     try {
-      console.log("Form submitted:", formData);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+      const form = new FormData();
+      form.append("name", formData.name);
+      form.append("email", formData.email);
+      form.append("message", formData.message);
+      form.append("access_key", "YOUR_ACCESS_KEY_HERE"); // Replace with real key
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: form,
+      });
+
+      const data = await response.json();
+
+      if ((data as any).success) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        console.error("Error:", data);
+        setSubmitStatus("error");
+      }
     } catch (error) {
+      console.error("Request failed:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -54,10 +71,10 @@ const ContactPage = () => {
         <Bird />
       </div>
       <div className="max-w-[1500px] mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 mt-12">
           <h1 className="text-5xl font-semibold text-white mb-4">Contact Me</h1>
         </div>
-        <div className="py-12 grid grid-cols-1 sm:grid-cols-2  max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2  max-w-6xl mx-auto">
           <div className="max-w-md">
             <form
               onSubmit={handleSubmit}
