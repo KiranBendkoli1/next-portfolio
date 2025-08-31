@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import CustomCard from "@/components/Cards/CustomCard";
 import Image from "next/image";
 import React from "react";
@@ -19,12 +19,13 @@ const AboutPage = () => {
             <Image
               src={profile}
               alt={"Kiran Bendkoli"}
-              className="size-[150px] rounded-full"
+              className="size-[250px] rounded-full"
             />
           </div>
           <p className="mt-4">
-            I’m a software engineer with around 2 years of experience working on frontends with React.js. Lately, I’ve been diving into backend development with Node.js and Express, and I also enjoy building Android apps using Flutter.
+            I’m a software engineer based in [Your City, Country], with around 2 years of experience working on frontends with React.js. Recently, I’ve been exploring backend development using Node.js and Express, and I also enjoy building Android apps with Flutter.
           </p>
+
         </div>
       </CustomCard>
       <CustomCard className="mx-2 sm:mx-0">
