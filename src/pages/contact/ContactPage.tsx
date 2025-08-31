@@ -41,7 +41,7 @@ const ContactPage = () => {
       form.append("name", formData.name);
       form.append("email", formData.email);
       form.append("message", formData.message);
-      form.append("access_key", "YOUR_ACCESS_KEY_HERE"); // Replace with real key
+      form.append("access_key", "5c1e07c0-1ccc-45e5-ad4f-cf91788ad2d7");
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -66,15 +66,13 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="relative">
-      <div className="absolute -z-10 w-full h-screen">
-        <Bird />
-      </div>
+    <div className="">
+
       <div className="max-w-[1500px] mx-auto">
         <div className="text-center mb-16 mt-12">
           <h1 className="text-5xl font-semibold text-white mb-4">Contact Me</h1>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2  max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto">
           <div className="max-w-md">
             <form
               onSubmit={handleSubmit}
@@ -141,11 +139,10 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-3 px-4 rounded-xl font-bold text-lg shadow-lg transition-transform duration-200 ${
-                    isSubmitting
+                  className={`w-full py-3 px-4 rounded-xl font-bold text-lg shadow-lg transition-transform duration-200 ${isSubmitting
                       ? "bg-gray-600 text-gray-400 cursor-not-allowed"
-                      : "bg-gradient-to-r from-orange-500 to-red-600 cursor-pointer hover:scale-[1.02] text-white focus:outline-none focus:ring-4 focus:ring-orange-500/50"
-                  }`}
+                      : "gradient-btn"
+                    }`}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
@@ -167,6 +164,9 @@ const ContactPage = () => {
                 </div>
               )}
             </form>
+          </div>
+          <div className="w-full h-screen">
+            <Bird />
           </div>
         </div>
       </div>

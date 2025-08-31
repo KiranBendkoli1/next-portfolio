@@ -3,7 +3,7 @@ import Image from "next/image";
 import winjit from "@/assets/images/company/winjit.jpg";
 const ExperienceCard = () => {
   return (
-    <div className="p-4">
+    <div className="px-4 py-1">
       <h2 className="text-2xl font-medium mb-6">Experience</h2>
       <div className="space-y-6">
         <div className="flex gap-4">
@@ -25,20 +25,16 @@ const ExperienceCard = () => {
                 using React and Next.js
               </li>
               <li>
-                Architected and implemented full-stack features with Node.js and
-                PostgreSQL
-              </li>
-              <li>
-                Built event-driven microservices architecture using Kafka and
-                Express
-              </li>
-              <li>
                 Optimized application performance and implemented responsive
                 design patterns
               </li>
               <li>
                 Integrated third-party APIs and services into existing
                 applications
+              </li>
+              <li>
+                Architected and implemented full-stack features with Node.js and
+                PostgreSQL
               </li>
             </ul>
           </div>

@@ -3,6 +3,14 @@
 
 
 
+.react-github-calendar {
+  overflow-x: hidden !important;
+}
+
+.react-github-calendar svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
 .editor-content:focus,
 .editor-content:active {
   outline: none !important;

@@ -236,22 +236,22 @@ const AuroraCanvas = () => {
           color3: "#009E8F", // deep teal
         });
       } else if (hash === "#about") {
-         setColors({
+        setColors({
           color1: "#00FFE5", // teal
           color2: "#00F0FF", // cyan
           color3: "#009E8F", // deep teal
         });
       } else if (hash === "#projects") {
         setColors({
-          color1: "#FFD700", // gold
-          color2: "#FF8C00", // orange
-          color3: "#FF4500", // deep orange-red
+          color1: "#00FFE5", // teal
+          color2: "#00F0FF", // cyan
+          color3: "#009E8F", // deep teal
         });
       } else if (hash === "#contact") {
         setColors({
-          color1: "#FF6B6B", // warm coral
-          color2: "#FF8E53", // soft orange
-          color3: "#FFD93D", // golden yellow
+          color1: "#00FFE5", // teal
+          color2: "#00F0FF", // cyan
+          color3: "#009E8F", // deep teal
         });
       }
     }
@@ -260,7 +260,7 @@ const AuroraCanvas = () => {
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 75 }}
-      className="absolute inset-0"
+      className="absolute inset-0 overflow-x-hidden"
     >
       <Suspense fallback={null}>
         <AuroraScene
