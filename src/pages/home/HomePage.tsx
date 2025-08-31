@@ -1,11 +1,15 @@
 
 "use client"
+import dynamic from "next/dynamic";
 import React from "react";
+
+const Astronaut = dynamic(() => import("@/components/Scene1"));
+
 const HomePage = () => {
   return (
     <section
       id="home"
-      className="grid py-12 grid-cols-1 h-screen md:grid-cols-2 max-w-6xl mx-auto relative"
+      className="grid py-12 grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto relative"
     >
       <div className="col-span-1 flex flex-col justify-center items-start text-start px-4">
         <h1 className="text-5xl font-bold ">
@@ -25,7 +29,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className="col-span-1 hidden sm:flex flex-col justify-center items-start text-start px-4">
-        
+        <Astronaut />
       </div>
     </section>
   );

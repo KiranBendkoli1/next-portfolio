@@ -19,7 +19,7 @@ const ExperienceCard = () => {
                 className="size-20 rounded-xl shadow-md hover:animate-bounce"
               />
             </div>
-            <ul className="mt-4 space-y-2 list-disc  text-gray-300 text-justify">
+            <ul className="mt-4 space-y-2 list-disc text-gray-400 text-justify">
               <li>
                 Led development of scalable frontend and micro-frontend systems
                 using React and Next.js

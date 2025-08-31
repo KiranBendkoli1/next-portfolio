@@ -166,7 +166,7 @@ const ContactPage = () => {
             </form>
           </div>
           <div className="w-full h-screen">
-            <Bird />
+            {/* <Bird /> */}
           </div>
         </div>
       </div>
