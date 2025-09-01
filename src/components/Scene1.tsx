@@ -7,9 +7,10 @@ import AstronautModel from "./AstronautModel";
 const Scene1 = () => {
   return (
     <Canvas
+      style={{ height: "60vh",  paddingTop:"50px" }}
       gl={{ antialias: true }}
       dpr={[1, 2]}
-      camera={{ position: [0, 2, 2], fov: 50 }} // Move camera back
+      camera={{ position: [0, 1.8, 1.8], fov: 50 }} // Move camera back
     >
       <ambientLight position={[20, -20, 20]} intensity={2} />
       <Suspense fallback={null}>
@@ -18,9 +19,7 @@ const Scene1 = () => {
       <OrbitControls
         makeDefault
         target={[0, 0, 0]}
-        autoRotate
         enableZoom={false}
-        autoRotateSpeed={0.5}
       />
     </Canvas>
   );

@@ -8,7 +8,7 @@ interface FormData {
   message: string;
 }
 
-const Bird = dynamic(() => import("@/components/Scene1"));
+const EarthScene = dynamic(() => import("@/components/EarthScene"));
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -66,108 +66,107 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="">
 
-      <div className="max-w-[1500px] mx-auto">
-        <div className="text-center mb-16 mt-12">
-          <h1 className="text-5xl font-semibold text-white mb-4">Contact Me</h1>
+    <div className="max-w-[1500px] mx-auto">
+      <div className="text-center mb-16 mt-12">
+        <h1 className="text-5xl font-semibold text-white mb-4">Contact Me</h1>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto">
+        <div className="max-w-md">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-gray-900/60 shadow-2xl  backdrop-blur-md border-white/10 rounded-lg px-8 pt-6 pb-8 mb-4 border"
+          >
+            <div className="mb-6">
+              <label
+                htmlFor="name"
+                className="block text-gray-300 text-sm font-semibold mb-2"
+              >
+                Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="block text-gray-300 text-sm font-semibold mb-2"
+              >
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label
+                htmlFor="message"
+                className="block text-gray-300 text-sm font-semibold mb-2"
+              >
+                Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200 resize-none"
+                placeholder="Message"
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full py-3 px-4 rounded-xl font-bold text-lg shadow-lg transition-transform duration-200 ${isSubmitting
+                  ? "bg-gray-600 text-gray-400 cursor-not-allowed"
+                  : "gradient-btn"
+                  }`}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </button>
+            </div>
+
+            {submitStatus === "success" && (
+              <div className="mt-4 p-4 bg-green-900/20 border border-green-700 rounded-lg">
+                <p className="text-sm text-green-400">
+                  Message sent successfully! I'll get back to you soon.
+                </p>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="mt-4 p-4 bg-red-900/20 border border-red-700 rounded-lg">
+                <p className="text-sm text-red-400">
+                  Something went wrong. Please try again.
+                </p>
+              </div>
+            )}
+          </form>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto">
-          <div className="max-w-md">
-            <form
-              onSubmit={handleSubmit}
-              className="bg-gray-900/60 shadow-2xl  backdrop-blur-md border-white/10 rounded-lg px-8 pt-6 pb-8 mb-4 border"
-            >
-              <div className="mb-6">
-                <label
-                  htmlFor="name"
-                  className="block text-gray-300 text-sm font-semibold mb-2"
-                >
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-300 text-sm font-semibold mb-2"
-                >
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="block text-gray-300 text-sm font-semibold mb-2"
-                >
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-gray-700/40 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200 resize-none"
-                  placeholder="Message"
-                />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full py-3 px-4 rounded-xl font-bold text-lg shadow-lg transition-transform duration-200 ${isSubmitting
-                      ? "bg-gray-600 text-gray-400 cursor-not-allowed"
-                      : "gradient-btn"
-                    }`}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-              </div>
-
-              {submitStatus === "success" && (
-                <div className="mt-4 p-4 bg-green-900/20 border border-green-700 rounded-lg">
-                  <p className="text-sm text-green-400">
-                    Message sent successfully! I'll get back to you soon.
-                  </p>
-                </div>
-              )}
-
-              {submitStatus === "error" && (
-                <div className="mt-4 p-4 bg-red-900/20 border border-red-700 rounded-lg">
-                  <p className="text-sm text-red-400">
-                    Something went wrong. Please try again.
-                  </p>
-                </div>
-              )}
-            </form>
-          </div>
-          <div className="w-full h-screen">
-            {/* <Bird /> */}
-          </div>
+        <div className="w-full">
+          {/* <Bird /> */}
+          <EarthScene />
         </div>
       </div>
     </div>

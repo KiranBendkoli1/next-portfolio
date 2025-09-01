@@ -34,7 +34,7 @@ export default function Home() {
       </section>
       <section
         id="contact"
-        className="px-0 snap-start pt-0 sm:pt-16"
+        className="px-0 pt-0 sm:pt-16"
       >
         <ContactPage />
       </section>
