@@ -1,31 +1,49 @@
-import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+
+export default function Footer() {
   return (
-    <div className="px-4 py-2">
-      <div className="flex flex-wrap items-center justify-start text-lg">
-        <span className="px-4 border-r border-gray-600 text-[#62728e]">find me in:</span>
+    <footer className="relative w-full bg-black text-gray-300 py-8 px-6 overflow-hidden">
+      {/* Starry background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.2),transparent_70%)]" />
+      {/* <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30" /> */}
 
-        <a
-          href="https://www.linkedin.com/in/kiran-bendkoli-2a2b741b9/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center px-2 transition  border-r border-gray-600 hover:scale-110"
-        >
-          <FaLinkedin size={28} color="#62728e" />
-        </a>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center gap-4">
+        <h2 className="text-lg font-semibold text-white tracking-wide">
+          ✦ Connect with me ✦
+        </h2>
 
-        <a
-          href="https://github.com/KiranBendkoli1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center px-2 transition border-r border-gray-600 hover:scale-110"
-        >
-          <FaGithubSquare size={28} color={"#62728e"}/>
-        </a>
+        {/* Links */}
+        <div className="flex gap-6">
+          <a
+            href="https://github.com/KiranBendkoli1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-indigo-400 transition-colors"
+          >
+            <FaGithub className="w-6 h-6" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kiran-bendkoli-2a2b741b9/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-indigo-400 transition-colors"
+          >
+            <FaLinkedin className="w-6 h-6" />
+          </a>
+          <a
+            href="mailto:kiranbendkoli24@gmail.com"
+            className="hover:text-indigo-400 transition-colors"
+          >
+            <FaEnvelope className="w-6 h-6" />
+          </a>
+        </div>
+
+        <p className="text-xs text-gray-500 mt-4">
+          © 2025 Kiran Bendkoli
+        </p>
       </div>
-    </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

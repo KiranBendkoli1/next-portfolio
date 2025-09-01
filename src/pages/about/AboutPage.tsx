@@ -23,7 +23,7 @@ const AboutPage = () => {
             />
           </div>
           <p className="mt-4">
-            I’m a software engineer based in [Your City, Country], with around 2 years of experience working on frontends with React.js. Recently, I’ve been exploring backend development using Node.js and Express, and I also enjoy building Android apps with Flutter.
+            I’m a software engineer based in Nashik, India, with around 2 years of experience working on frontends with React.js. Recently, I’ve been exploring backend development using Node.js and Express, and I also enjoy building Android apps with Flutter.
           </p>
 
         </div>
