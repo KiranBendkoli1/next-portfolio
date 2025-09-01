@@ -16,7 +16,7 @@ const ExperienceCard = () => {
               <Image
                 src={winjit}
                 alt="Winjit"
-                className="size-20 rounded-xl shadow-md hover:animate-bounce"
+                className="size-20 rounded-xl shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:shadow-lg"
               />
             </div>
             <ul className="mt-4 space-y-2 list-disc text-gray-400 text-justify">
