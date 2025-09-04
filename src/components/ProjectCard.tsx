@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { ProjectType } from "../app/projects/data";
+import { ProjectType } from "../pages/projects/data";
 import { FaGithub, FaNpm, FaReact, FaPython, FaPhp } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
 import { GoLinkExternal } from "react-icons/go";

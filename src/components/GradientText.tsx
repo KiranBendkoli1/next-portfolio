@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 const GradientText = ({
   children,
-  gradientColors = ["#FFAD60", "#FF6B3E", "#FF4E50"],
+  gradientColors = ["#f6339a", "#a855f7", "#3b82f6"],
 }: {
   children: React.ReactNode;
   gradientColors?: string[];
 }) => {
   return (
-    <motion.div
-      className="text-4xl font-bold whitespace-nowrap"
+    <motion.h1
+      className="text-5xl md:text-6xl  font-bold whitespace-nowrap"
       animate={{
         backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
       }}
@@ -29,7 +29,7 @@ const GradientText = ({
       }}
     >
       {children}
-    </motion.div>
+    </motion.h1>
   );
 };
 
