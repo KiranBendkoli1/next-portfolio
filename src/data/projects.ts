@@ -1,4 +1,3 @@
-import bb1 from "@/assets/images/project/bb2-min.png";
 
 export interface ProjectType {
   index: number;
@@ -12,7 +11,7 @@ export interface ProjectType {
   position: number[];
 }
 
-const projects: ProjectType[] = [
+export const projects: ProjectType[] = [
   {
     index: 1,
     title: "NGO Nexus",
@@ -80,4 +79,3 @@ const projects: ProjectType[] = [
   },
 ];
 
-export default projects;

@@ -1,8 +1,8 @@
 import React, { Suspense, useMemo } from "react";
 import { Center, OrbitControls } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
-import { TextureLoader, VideoTexture, LinearFilter, LinearMipmapLinearFilter, SRGBColorSpace } from "three";
+import { TextureLoader, VideoTexture, LinearFilter, SRGBColorSpace, MeshStandardMaterial } from "three";
 
 useGLTF.preload("/ultrawide_monitor.glb");
 
@@ -33,7 +33,7 @@ const Monitor = ({ textureUrl }: { textureUrl: string }) => {
   }, [textureUrl]);
 
   // clone material so each card has its own screen
-  const screen = materials["Screen"].clone() as any;
+  const screen = materials["Screen"].clone() as MeshStandardMaterial;
   screen.map = texture;
   screen.emissiveMap = texture;
   screen.emissiveIntensity = 1;
@@ -41,6 +41,7 @@ const Monitor = ({ textureUrl }: { textureUrl: string }) => {
 
   // clone scene so monitors don’t overwrite each other
   const clonedScene = scene.clone();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   clonedScene.traverse((obj: any) => {
     if (obj.isMesh && obj.material.name === "Screen") {
       obj.material = screen;

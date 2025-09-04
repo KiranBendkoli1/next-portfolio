@@ -1,19 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+
+const navItems = [
+  { label: "_home", id: "home" },
+  { label: "_about", id: "about" },
+  { label: "_projects", id: "projects" },
+  { label: "_contact", id: "contact" },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  const navItems = [
-    { label: "_home", id: "home" },
-    { label: "_about", id: "about" },
-    { label: "_projects", id: "projects" },
-    { label: "_contact", id: "contact" },
-  ];
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -43,19 +41,18 @@ export default function Navbar() {
       },
       {
         threshold: 0.3,
-        rootMargin: "-80px 0px -80px 0px", 
+        rootMargin: "-80px 0px -80px 0px",
       }
     );
 
     sections.forEach((sec) => sec && observer.observe(sec));
     return () => observer.disconnect();
-  }, []);
+  }, [navItems]);
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300  ${
-        isScrolled ? "backdrop-blur-md bg-white/10 shadow-lg " : "bg-transparent"
-      }`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300  ${isScrolled ? "backdrop-blur-md bg-white/10 shadow-lg " : "bg-transparent"
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="text-xl font-light tracking-widest text-accent-cyan gradient-text">
@@ -68,11 +65,10 @@ export default function Navbar() {
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors ${
-                  activeSection === item.id
-                    ? "text-accent-cyan drop-shadow-[0_0_6px_rgba(168,85,247,0.7)]"
-                    : "hover:text-white transition"
-                }`}
+                className={`transition-colors ${activeSection === item.id
+                  ? "text-accent-cyan drop-shadow-[0_0_6px_rgba(168,85,247,0.7)]"
+                  : "hover:text-white transition"
+                  }`}
               >
                 {item.label}
               </button>
@@ -102,11 +98,10 @@ export default function Navbar() {
                     scrollToSection(item.id);
                     setIsOpen(false);
                   }}
-                  className={`text-lg tracking-widest ${
-                    activeSection === item.id
-                      ? "text-primary border-b-2 border-primary"
-                      : "text-white"
-                  }`}
+                  className={`text-lg tracking-widest ${activeSection === item.id
+                    ? "text-primary border-b-2 border-primary"
+                    : "text-white"
+                    }`}
                 >
                   {item.label}
                 </button>

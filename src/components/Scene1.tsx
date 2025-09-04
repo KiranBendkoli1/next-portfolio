@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import AstronautModel from "./AstronautModel";
 
 const OscillatingControls = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const controlsRef = useRef<any>(null);
   const direction = useRef(1); // 1 = forward, -1 = backward
 

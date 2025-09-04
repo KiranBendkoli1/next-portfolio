@@ -6,7 +6,7 @@ import profile from "@/assets/profile.webp";
 import ExperienceCard from "@/components/Cards/ExperienceCard";
 import { FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
-import { SiExpress, SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiExpress, SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiTailwindcss, SiTypescript } from "react-icons/si";
 import OrbitSkills from "@/components/OrbitSkills";
 import GitHubCalendar from "react-github-calendar";
 

@@ -48,9 +48,9 @@ const ContactPage = () => {
         body: form,
       });
 
-      const data = await response.json();
+      const data = await response.json() as { success: boolean };
 
-      if ((data as any).success) {
+      if (data.success) {
         setSubmitStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -150,7 +150,7 @@ const ContactPage = () => {
             {submitStatus === "success" && (
               <div className="mt-4 p-4 bg-green-900/20 border border-green-700 rounded-lg">
                 <p className="text-sm text-green-400">
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I will get back to you soon.
                 </p>
               </div>
             )}

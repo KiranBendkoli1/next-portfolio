@@ -5,7 +5,6 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { ShaderMaterial, type Points } from "three";
 import * as THREE from "three";
 import { usePathname, useSearchParams } from "next/navigation";
-import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 
 interface Props {
   color1: string;
@@ -130,17 +129,11 @@ function Stars() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={2000}
-          array={positions}
-          itemSize={3}
-          args={[] as any}
+          args={[positions, 3]}
         />
         <bufferAttribute
           attach="attributes-color"
-          count={2000}
-          array={colors}
-          itemSize={3}
-          args={[] as any}
+          args={[colors, 3]}
         />
       </bufferGeometry>
       <pointsMaterial size={0.02} vertexColors transparent opacity={0.8} />
@@ -180,7 +173,7 @@ const Aurora: FC<Props> = ({ color1, color2, color3 }) => {
       transparent: true,
       blending: THREE.AdditiveBlending,
     });
-  }, []);
+  }, [color1, color2, color3]);
 
   return (
     <mesh position={[0, 0, -3]}>

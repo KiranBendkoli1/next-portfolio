@@ -14,7 +14,7 @@ const HomePage = () => {
     >
       <div className="col-span-1 flex flex-col justify-center items-start text-start px-4">
         <h1 className="text-5xl font-bold ">
-          Hi, I'm <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">Kiran Bendkoli</span>
+          Hi, I am <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">Kiran Bendkoli</span>
         </h1>
         <p className="text-lg  mt-4 max-w-2xl text-text-muted">
           Frontend developer at Winjit Technologies with 2 years of experience

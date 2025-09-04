@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import projects from "./data";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import { projects } from "../../data/projects";
 const MonitorScene = dynamic(() => import("@/components/MonitorScene"), {
   ssr: false,
 });

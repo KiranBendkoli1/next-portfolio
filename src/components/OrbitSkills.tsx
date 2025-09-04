@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 export type OrbitItem = { name: string; icon: React.ReactNode };
 
 export interface OrbitRingProps {
-  radius: number; 
-  size?: number; 
-  duration?: number; 
-  reverse?: boolean; 
+  radius: number;
+  size?: number;
+  duration?: number;
+  reverse?: boolean;
   items: OrbitItem[];
 }
 
@@ -21,7 +21,7 @@ export interface OrbitSkillsProps {
   className?: string;
 }
 
-const OrbitSkills: React.FC<OrbitSkillsProps> = ({ center, rings, className = "" }) => {
+const OrbitSkills: React.FC<OrbitSkillsProps> = ({ rings, className = "" }) => {
   return (
     <div
       className={`relative isolate aspect-square w-full max-w-[250px] md:max-w-[400px] mx-auto select-none ${className}`}
