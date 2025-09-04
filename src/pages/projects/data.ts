@@ -3,7 +3,7 @@ import bb1 from "@/assets/images/project/bb2-min.png";
 export interface ProjectType {
   index: number;
   title: string;
-  domain: string;
+  tech: string[];
   img: string;
   vid?: string;
   link?: string;
@@ -16,7 +16,7 @@ const projects: ProjectType[] = [
   {
     index: 1,
     title: "NGO Nexus",
-    domain: "Flutter",
+    tech: ["Flutter", "Firebase"],
     img: "/images/ngo.jpg",
     link: "https://github.com/KiranBendkoli1/ngo_app/releases/tag/v0.0.2",
     desc: "The NGO Nexus app is designed to connect NGOs with volunteers and donors, facilitating collaboration and support for various social causes.",
@@ -27,7 +27,7 @@ const projects: ProjectType[] = [
   {
     index: 0,
     title: "Food Places App",
-    domain: "ReactJs",
+    tech: ["ReactJs", "Firebase", "AntDesign"],
     img: "/images/foodplaces.png",
     link: "https://food-places-e37db.web.app/",
     desc: "A react app where you can find nearby foodshops listed by foodshops owners, you can also add your likes and reviews",
@@ -39,7 +39,7 @@ const projects: ProjectType[] = [
   {
     index: 2,
     title: "K-setup",
-    domain: "npm",
+    tech: ["npm"],
     img: "/images/ksetup.png",
     vid: "/videos/ksetup.mp4",
     desc: "A lightweight CLI tool to quickly scaffold React.js or React Native projects with custom configurations and templates.",
@@ -50,7 +50,7 @@ const projects: ProjectType[] = [
   {
     index: 4,
     title: "Crypto App",
-    domain: "ReactJs",
+    tech: ["ReactJs", "Chart.js"],
     img: "/images/crypto.png",
     vid: "/videos/crypto.mp4",
     link: "https://crypto-app-react-pearl.vercel.app/",
@@ -61,7 +61,7 @@ const projects: ProjectType[] = [
   {
     index: 3,
     title: "Lets Quick Share",
-    domain: "Flutter",
+    tech: ["Flutter", "Firebase"],
     img: "/images/lqs2.jpg",
     link: "https://lets-quick-share.web.app/#/",
     desc: "This app helps users to share important texts and links between devices. it's present in web app as well as android app",
@@ -72,7 +72,7 @@ const projects: ProjectType[] = [
   {
     index: 5,
     title: "Blood Bank Management System",
-    domain: "PHP",
+    tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     img: "/images/bb2-min.png",
     desc: "This is web based blood bank management system which can be use as a solution over traditional blood bank management system",
     source: "https://github.com/KiranBendkoli1/blood-bank-management-system",

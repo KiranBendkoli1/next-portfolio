@@ -55,11 +55,17 @@ const Projects3D = () => {
                 <p className="text-gray-300 leading-relaxed">{project.desc}</p>
 
                 <div className="flex items-center space-x-4">
-                  <span className="inline-block px-3 py-1 text-sm font-medium text-gray-300 border border-gray-600 rounded">
-                    {project.domain}
-                  </span>
-                </div>
+                  {
+                    project.tech.map((tech, idx) => (
+                      <div key={idx}>
+                        <span className="inline-block px-3 py-1 text-sm font-medium text-gray-300 border border-gray-600 rounded">
+                          {tech}
+                        </span>
+                      </div>
+                    ))
+                  }
 
+                </div>
                 <div className="flex items-center space-x-4">
                   <a
                     href={project.source}

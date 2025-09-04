@@ -3,7 +3,6 @@ import ContactPage from "@/pages/contact/ContactPage";
 import HomePage from "@/pages/home";
 import Projects3D from "@/pages/projects/Projects3D";
 import dynamic from "next/dynamic";
-import { headers } from "next/headers";
 
 export const runtime = "edge";
 const AuroraCanvas = dynamic(() => import("@/components/Aurora/AuroraScene"));

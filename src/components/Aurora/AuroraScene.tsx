@@ -5,6 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { ShaderMaterial, type Points } from "three";
 import * as THREE from "three";
 import { usePathname, useSearchParams } from "next/navigation";
+import { EffectComposer, SelectiveBloom } from "@react-three/postprocessing";
 
 interface Props {
   color1: string;
