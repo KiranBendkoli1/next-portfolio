@@ -1,0 +1,6 @@
+# Redirect www to non-www
+http://www.:domain: /* https://:domain:/:splat 301
+https://www.:domain: /* https://:domain:/:splat 301
+
+# Redirect HTTP to HTTPS
+http://:domain: /* https://:domain:/:splat 301
