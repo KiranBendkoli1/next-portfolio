@@ -39,7 +39,7 @@ const Projects3D = () => {
               viewport={{ once: false, amount: 0.3 }}
               variants={cardVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className={`flex flex-col md:flex-row items-center gap-x-4 gap-y-2 md:gap-8 p-8 rounded-lg ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              className={`flex flex-col md:flex-row items-center gap-x-4 gap-y-2 md:gap-8 p-2 sm:p-8 rounded-lg ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
             >
               {/* Left Column - Content */}

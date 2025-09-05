@@ -72,7 +72,7 @@ const ContactPage = () => {
         <h1 className="text-5xl font-semibold text-white mb-4">Contact Me</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 max-w-6xl mx-auto">
-        <div className="max-w-md">
+        <div className="max-w-md mx-2 sm:mx-0">
           <form
             onSubmit={handleSubmit}
             className="bg-gray-900/60 shadow-2xl  backdrop-blur-md border-white/10 rounded-lg px-8 pt-6 pb-8 mb-4 border"
