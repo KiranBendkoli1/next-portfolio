@@ -23,12 +23,13 @@ const HomePage = () => {
     >
       <div className="col-span-1 flex flex-col justify-center items-start text-start px-4">
         <h1 className="text-5xl font-bold ">
-          Hi, I am <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">Kiran Bendkoli</span>
+          Hi, I am <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">Kiran Bendkoli</span> <span className="text-4xl text-gray-300">Full Stack Developer</span>
         </h1>
-        <p className="text-lg  mt-4 max-w-2xl text-text-muted">
-          Frontend developer at Winjit Technologies with 2 years of experience
-          building responsive web apps using React.js. Continously expanding
-          into backend development to go full-stack.
+        <p className="text-lg mt-4 max-w-2xl text-text-muted">
+          Experienced Frontend Developer at Winjit Technologies with 2+ years of expertise in 
+          building modern, responsive web applications using React.js. 
+          Currently expanding into full-stack development with Node.js and Express.js to deliver 
+          comprehensive web solutions. 
         </p>
 
         <div className="w-full flex items-center py-12 gap-6 max-w-6xl mx-auto">

@@ -165,7 +165,6 @@ const ContactPage = () => {
           </form>
         </div>
         <div className="w-full">
-          {/* <Bird /> */}
           <EarthScene />
         </div>
       </div>

@@ -1,5 +1,4 @@
 "use client";
-import CustomCard from "@/components/Cards/CustomCard";
 import Image from "next/image";
 import React from "react";
 import profile from "@/assets/profile.webp";
@@ -9,6 +8,7 @@ import { FaFlutter } from "react-icons/fa6";
 import { SiExpress, SiJavascript, SiNextdotjs, SiNodedotjs, SiPostgresql, SiTailwindcss, SiTypescript } from "react-icons/si";
 import OrbitSkills from "@/components/OrbitSkills";
 import GitHubCalendar from "react-github-calendar";
+import CustomCard from "@/components/Cards/CustomCard";
 
 const AboutPage = () => {
   return (

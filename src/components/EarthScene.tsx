@@ -21,6 +21,8 @@ const EarthScene = () => {
                 autoRotate
                 enableZoom={false}
                 autoRotateSpeed={1}
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}
             />
         </Canvas>
     );
