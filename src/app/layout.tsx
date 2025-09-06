@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: "Software Engineer at Winjit Technologies with 2+ years of experience in React.js, Next.js, TypeScript, and full-stack development.",
   },
   icons: {
-    icon: "/icon.png",
+    icon: "/favicon.ico",
   },
 };
 
