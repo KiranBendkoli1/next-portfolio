@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     title: "Kiran Bendkoli - Full Stack Developer Portfolio",
     description: "Software Engineer at Winjit Technologies with 2+ years of experience in React.js, Next.js, TypeScript, and full-stack development.",
   },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -51,10 +54,10 @@ export default function RootLayout({
             "name": "Kiran Bendkoli",
             "jobTitle": "Software Engineer",
             "description": "Frontend developer with expertise in React.js and Next.js",
-            "url": "https://YOUR-DOMAIN.com",
+            "url": "https://kiranbendkoli.dev",
             "sameAs": [
               "https://github.com/KiranBendkoli1",
-              "https://linkedin.com/in/YOUR-LINKEDIN"
+              "https://www.linkedin.com/in/kiran-bendkoli-2a2b741b9/"
             ],
             "worksFor": {
               "@type": "Organization",
