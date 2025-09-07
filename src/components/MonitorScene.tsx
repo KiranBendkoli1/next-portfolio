@@ -55,23 +55,25 @@ const Monitor = ({ textureUrl }: { textureUrl: string }) => {
   );
 };
 
-const MonitorScene = ({ textureUrl }: { textureUrl: string }) => {
-  return (
-    <Canvas
-      camera={{
+const MonitorScene = ({ textureUrl }: { textureUrl: string }) => (
+  <Canvas
+    camera={{
         position: [4.5, 4.2, 1.2],
-      }}
-    >
+    }}
+  >
       <directionalLight position={[10, 10, 2]} />
       <ambientLight intensity={0.5} />
-      <Suspense fallback={null}>
-        <Center>
-          <Monitor textureUrl={textureUrl} />
-        </Center>
-      </Suspense>
-      <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-    </Canvas>
-  );
-};
+    <Suspense fallback={null}>
+      <Center>
+        <Monitor textureUrl={textureUrl} />
+      </Center>
+    </Suspense>
+    <OrbitControls
+      enabled={false}
+      enablePan={false}
+      enableZoom={false}
+      enableRotate={false} />
+  </Canvas>
+);
 
 export default MonitorScene;

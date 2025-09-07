@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import dynamic from "next/dynamic";
 import { projects } from "../../data/projects";
@@ -11,15 +10,30 @@ const MonitorScene = dynamic(() => import("@/components/MonitorScene"), {
 
 const Projects3D = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
+  const [animatingProjects, setAnimatingProjects] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Initially animate the first three projects
+    const initialProjects = Array.from({ length: visibleProjects }, (_, i) => i);
+    animateProjectsSequentially(initialProjects);
+  }, []);
 
   const handleViewMore = () => {
-    setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
+    const nextBatch = Array.from(
+      { length: 3 },
+      (_, i) => i + visibleProjects
+    ).filter(index => index < projects.length);
+    
+    setVisibleProjects(prev => Math.min(prev + 3, projects.length));
+    animateProjectsSequentially(nextBatch);
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -50 },
+  const animateProjectsSequentially = (projectIndices: number[]) => {
+    projectIndices.forEach((index, i) => {
+      setTimeout(() => {
+        setAnimatingProjects(prev => [...prev, index]);
+      }, i * 300); // 300ms delay between each project
+    });
   };
 
   return (
@@ -31,16 +45,12 @@ const Projects3D = () => {
 
         <div className="space-y-6">
           {projects.slice(0, visibleProjects).map((project, index) => (
-            <motion.div
+            <div
               key={project.index}
-              initial="hidden"
-              whileInView="visible"
-              exit="exit"
-              viewport={{ once: false, amount: 0.3 }}
-              variants={cardVariants}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className={`flex flex-col md:flex-row items-center gap-x-4 gap-y-2 md:gap-8 p-2 sm:p-8 rounded-lg ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+              className={`flex flex-col md:flex-row items-center gap-x-4 gap-y-2 md:gap-8 p-2 sm:p-8 rounded-lg 
+                ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
+                transition-all duration-500 ease-out
+                ${animatingProjects.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
             >
               {/* Left Column - Content */}
               <div className="flex-1 space-y-4">
@@ -97,7 +107,7 @@ const Projects3D = () => {
                   textureUrl={project.vid ? project.vid : project.img}
                 />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
