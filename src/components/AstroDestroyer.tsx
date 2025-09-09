@@ -17,6 +17,7 @@ const AstroDestroyer = () => {
     const [bullets, setBullets] = useState<{ x: number; y: number }[]>([]);
     const [asteroids, setAsteroids] = useState<{ x: number; y: number }[]>([]);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const shipRef = useRef<any>(shipPosition);
     const pressedKeys = useRef<Set<string>>(new Set());
 
@@ -150,7 +151,7 @@ const AstroDestroyer = () => {
                     Score: {score}
                 </div>
                 <div>
-                    {Array.from({ length: lives }).map((_, idx) => ("❤️"))}
+                    {Array.from({ length: lives }).map(() => ("❤️"))}
                 </div>
             </div>
             <div className="bg-secondary w-full relative" style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }}>
