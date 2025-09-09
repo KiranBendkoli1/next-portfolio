@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-const CANVAS_WIDTH = 300;
-const CANVAS_HEIGHT = 500;
-const SHIP_SIZE = 30;
+const CANVAS_WIDTH = 350;
+const CANVAS_HEIGHT = 550;
+const SHIP_SIZE = 70;
 const ASTEROID_SIZE = 40;
 const BULLET_HEIGHT = 25;
 const BULLET_WIDTH = 2;
@@ -155,13 +155,26 @@ const AstroDestroyer = () => {
             </div>
             <div className="bg-secondary w-full relative" style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }}>
                 {asteroids.map((asteroid, index) => (
-                    <div key={index} className="bg-gray-500 absolute rounded-full" style={{ height: ASTEROID_SIZE, width: ASTEROID_SIZE, left: asteroid.x, top: asteroid.y }} />
+                    <div
+                        key={index}
+                        className="absolute rounded-full shadow-lg"
+                        style={{
+                            height: ASTEROID_SIZE,
+                            width: ASTEROID_SIZE,
+                            left: asteroid.x,
+                            top: asteroid.y,
+                            backgroundImage: 'url(/meteor.png)',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundColor: '#6B7280', // fallback color
+                        }}
+                    />
                 ))}
                 {bullets.map((bullet, index) => (
                     <div key={index} className="bg-red-500 absolute" style={{ height: BULLET_HEIGHT, width: BULLET_WIDTH, left: bullet.x, top: bullet.y }} />
                 ))}
-                <div className="bg-blue-500 absolute item-center flex justify-center rounded-t-full" style={{ height: SHIP_SIZE, width: SHIP_SIZE, left: shipPosition.x, top: shipPosition.y }}>^</div>
-                {/* Overlay for Start/Game Over */}
+                <img src="/rocket.gif" alt="Spaceship" className="object-cover absolute" style={{ height: SHIP_SIZE, width: SHIP_SIZE, left: shipPosition.x, top: shipPosition.y }} />
                 {(gameStatus !== "playing") && (
                     <div className="absolute inset-0 z-20 flex flex-col items-center justify-center  bg-gray-900/20 text-white">
                         <div className="text-3xl font-bold mb-4">

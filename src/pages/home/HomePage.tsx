@@ -1,11 +1,8 @@
 
 "use client"
 import React from "react";
-import dynamic from "next/dynamic";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import AstroDestroyer from "@/components/AstroDestroyer";
-
-const Astronaut = dynamic(() => import("@/components/Scene1"));
 
 const HomePage = () => {
 
@@ -68,9 +65,7 @@ const HomePage = () => {
           </button>
         </div>
       </div>
-      <div className="col-span-1 flex justify-center items-start text-start px-4">
-        {/* <Astronaut />
-         */}
+      <div className="col-span-1 flex  justify-center sm:justify-end items-start text-start px-4">
         <AstroDestroyer />
       </div>
     </section>

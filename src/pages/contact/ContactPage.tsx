@@ -8,7 +8,7 @@ interface FormData {
   message: string;
 }
 
-const EarthScene = dynamic(() => import("@/components/EarthScene"));
+const AstronautModel = dynamic(() => import("@/components/Scene1"));
 
 const ContactPage = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -165,7 +165,7 @@ const ContactPage = () => {
           </form>
         </div>
         <div className="w-full">
-          <EarthScene />
+          <AstronautModel />
         </div>
       </div>
     </div>

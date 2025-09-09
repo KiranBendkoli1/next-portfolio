@@ -47,7 +47,7 @@ const OscillatingControls = () => {
 const Scene1 = () => {
   return (
     <Canvas
-      style={{ height: "400px" }}
+      style={{ minHeight: "400px" }}
       gl={{ antialias: true }}
       dpr={[1, 2]}
       camera={{ position: [1, 0.6, 0.6], fov: 50 }}
