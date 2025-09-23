@@ -175,7 +175,7 @@ const AstroDestroyer = () => {
                 {bullets.map((bullet, index) => (
                     <div key={index} className="bg-red-500 absolute" style={{ height: BULLET_HEIGHT, width: BULLET_WIDTH, left: bullet.x, top: bullet.y }} />
                 ))}
-                <img src="/rocket.gif" alt="Spaceship" className="object-cover absolute" style={{ height: SHIP_SIZE, width: SHIP_SIZE, left: shipPosition.x- SHIP_SIZE, top: shipPosition.y }} />
+                <img src="/rocket.gif" alt="Spaceship" className="object-cover absolute" style={{ height: SHIP_SIZE, width: SHIP_SIZE, left: shipPosition.x- SHIP_SIZE/2, top: shipPosition.y }} />
                 {(gameStatus !== "playing") && (
                     <div className="absolute inset-0 z-20 flex flex-col items-center justify-center  bg-gray-900/20 text-white">
                         <div className="text-3xl font-bold mb-4">
